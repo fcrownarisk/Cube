@@ -1,0 +1,23 @@
+   0D:          • 
+
+   1D:          •———•
+
+   2D:          •———•
+                |   |
+                •———•
+
+   3D:          +----------+
+               /|         /|
+              / |        / |
+             •----------•  |
+             |  |       |  |
+             |  •-------|--•
+             | /        | /
+             |/         |/
+             •----------•
+
+   4D: [Projection of a tesseract in 2D, as above]
+
+   ...
+
+   248D: [Generalization: 2^248 vertices, each connected to 248 edges, etc.]
