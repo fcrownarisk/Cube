@@ -8,7 +8,6 @@ pub fn visualize_2d_projection(cube: hypercube_248.Hypercube248) {
   let scaled_projection = scale_projection(projection, 50, 20)
   
   io.println("\n2D Projection of 248D Cube (ASCII Art):")
-  io.println("========================================")
   
   draw_ascii_grid(scaled_projection)
 }
@@ -163,4 +162,5 @@ pub fn main() {
   io.println("  • Each dot represents a vertex projected from 248D to 2D")
   io.println("  • Random projection preserves some distance relationships")
   io.println("  • Full structure requires 248 dimensions to fully represent")
+
 }
