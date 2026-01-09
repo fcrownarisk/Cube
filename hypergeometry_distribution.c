@@ -7,9 +7,7 @@
 #include <stdbool.h>
 #include <float.h>
 
-// =============================
 // CONSTANTS & CONFIGURATION
-// =============================
 #define MAX_DIMENSIONS 256
 #define HYPERCUBE_VERTICES 65536  // 2^16 for manageable computation
 #define HYPERSPHERE_SAMPLES 10000
@@ -21,9 +19,8 @@
 #define E 2.71828182845904523536
 #define GOLDEN_RATIO 1.61803398874989484820
 
-// =============================
+
 // DATA STRUCTURES
-// =============================
 typedef struct {
     int dimensions;
     double coordinates[MAX_DIMENSIONS];
@@ -55,10 +52,8 @@ typedef struct {
     int sample_count;
 } HyperStatisticalData;
 
-// =============================
-// MATHEMATICAL CORE FUNCTIONS
-// =============================
 
+// MATHEMATICAL CORE FUNCTIONS
 // Gamma function approximation using Lanczos method
 double gamma_function(double x) {
     if (x <= 0) return INFINITY;
@@ -168,9 +163,9 @@ void calculate_curvature_tensor(int dimensions, double* metric, double* curvatur
     }
 }
 
-// =============================
+
 // HYPERGEOMETRIC DISTRIBUTIONS
-// =============================
+
 
 // Multivariate hypergeometric distribution PMF
 double multivariate_hypergeometric_pmf(int* draws, int* successes, int* population, 
@@ -231,9 +226,9 @@ double volume_element(int dimensions, double* metric, double* coordinates) {
     return sqrt(fabs(det_g));
 }
 
-// =============================
+
 // RANDOM SAMPLING IN HIGH DIMENSIONS
-// =============================
+
 
 // Generate random point on n-sphere (uniform distribution)
 void random_point_on_nsphere(int n, double radius, double* point) {
@@ -307,9 +302,7 @@ void sample_von_mises_fisher(int n, double* mean_direction, double kappa, double
     free(v);
 }
 
-// =============================
 // DISTANCE AND SIMILARITY METRICS
-// =============================
 
 // Mahalanobis distance in high dimensions
 double mahalanobis_distance(int n, double* x, double* y, double* inv_covariance) {
@@ -369,9 +362,7 @@ double jensen_shannon_divergence(double* p, double* q, int n) {
     return 0.5 * jsd;
 }
 
-// =============================
 // ADVANCED VISUALIZATION
-// =============================
 
 // Project high-dimensional data to 3D using PCA
 void pca_projection_3d(double** data, int samples, int dimensions, double** projection) {
@@ -425,10 +416,8 @@ void generate_distance_heatmap(int dimensions, double radius, int bins, double* 
     }
 }
 
-// =============================
-// MONTE CARLO INTEGRATION IN HIGH DIMENSIONS
-// =============================
 
+// MONTE CARLO INTEGRATION IN HIGH DIMENSIONS
 // Monte Carlo integration over hypersphere
 double monte_carlo_hypersphere(int dimensions, double radius, 
                                double (*func)(double*, int), int iterations) {
@@ -468,9 +457,9 @@ double importance_sampling(int dimensions,
     return sum / samples;
 }
 
-// =============================
+
 // UTILITY FUNCTIONS
-// =============================
+
 
 double randn() {
     // Generate standard normal random variable
@@ -515,9 +504,9 @@ double gamma_rand(double shape, double scale) {
     return scale * d * v;
 }
 
-// =============================
+
 // HYPERGEOMETRY ANALYSIS
-// =============================
+
 
 void analyze_hypergeometry(HyperGeometry* geometry, HyperStatisticalData* stats) {
     printf("\n=== HYPERGEOMETRY ANALYSIS ===\n");
@@ -561,9 +550,9 @@ void analyze_hypergeometry(HyperGeometry* geometry, HyperStatisticalData* stats)
     printf("Concentration Measure: %.6f\n", avg_dist / sqrt(geometry->dimension));
 }
 
-// =============================
+
 // DEMONSTRATION FUNCTIONS
-// =============================
+
 
 // Example target function for integration
 double example_function(double* point, int dimensions) {
@@ -583,9 +572,9 @@ double example_proposal(double* point, int dimensions) {
     return exp(-sum / 2.0) / pow(2 * PI, dimensions / 2.0);
 }
 
-// =============================
+
 // MAIN DEMONSTRATION
-// =============================
+
 int main() {
     printf("========================================\n");
     printf("    HYPERGEOMETRY DISTRIBUTION ANALYSIS\n");
@@ -826,4 +815,5 @@ int main() {
     printf("========================================\n");
     
     return 0;
+
 }
